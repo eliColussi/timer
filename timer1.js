@@ -1,8 +1,8 @@
-const args = process.argv.slice(2);
+const args = process.argv.slice(2); //slice at terminal input
 
 const timer = ((args) => {
-  for (const num of args) {
-    if (num < 0) {
+  for (const num of args) { //loop through inputs
+    if (num < 0 && num !== NaN) {
       continue;
     };
 
@@ -10,10 +10,7 @@ const timer = ((args) => {
       continue;
     };
 
-    if (isNaN(num)) {
-      continue;
-    };
-    setTimeout(() => {
+    setTimeout(() => { //set timeout to beep at user inputed time
       process.stdout.write('\x07');
     }, num * 1000);
   }
@@ -21,7 +18,7 @@ const timer = ((args) => {
   
   
 
-timer(args);
+timer(args); //call the function
 
 
 
